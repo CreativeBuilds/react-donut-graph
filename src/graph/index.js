@@ -2,8 +2,6 @@ import React from 'react';
 import './Graph.css';
 import { reverse } from 'lodash';
 
-module.exports = DonutChart;
-
 const DonutChart = React.createClass({
   propTypes: {
     valuelabel: React.PropTypes.string, // label for the chart
@@ -115,3 +113,4 @@ const DonutChart = React.createClass({
     );
   }
 });
+export default DonutChart;
