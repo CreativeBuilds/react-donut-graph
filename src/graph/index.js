@@ -6,9 +6,9 @@ module.exports = DonutChart;
 
 const DonutChart = React.createClass({
   propTypes: {
-    value: React.PropTypes.number, // value the chart should show
     valuelabel: React.PropTypes.string, // label for the chart
     size: React.PropTypes.number, // diameter of chart
+    data: React.PropTypes.array, // array of data
     strokewidth: React.PropTypes.number, // width of chart line
     donutchartTextValStyle: React.PropTypes.object,
     donutchartTextLabelStyle: React.PropTypes.object,
@@ -16,8 +16,8 @@ const DonutChart = React.createClass({
   },
   getDefaultProps() {
     return {
-      data: [{ value: 10, stroke: '#00ff00', offset: 0, width: 20 }],
-      valuelabel: 'Completed',
+      data: [],
+      valuelabel: 'ValueLabel',
       size: 150,
       strokewidth: 20
     };
@@ -107,7 +107,7 @@ const DonutChart = React.createClass({
             x={halfsize}
             y={halfsize + 10}
           >
-            TICKETS IN
+            {this.props.valuelabel}
           </tspan>
         </text>
       </svg>
