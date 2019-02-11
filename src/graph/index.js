@@ -1,5 +1,5 @@
 import React from 'react';
-import './Graph.css';
+import './index.css';
 import { reverse } from 'lodash';
 
 const DonutChart = React.createClass({
