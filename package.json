@@ -1,10 +1,11 @@
 {
   "name": "graph-donut",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "A donut graph for reactJS",
-  "main": "src/graph/index.js",
+  "main": "dir/graph/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dir --copy-files"
   },
   "keywords": [
     "ReactJS",
