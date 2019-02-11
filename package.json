@@ -1,6 +1,6 @@
 {
   "name": "graph-donut",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "A donut graph for reactJS",
   "main": "dir/graph/index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.11",
+    "prop-types": "^15.7.1",
     "react": "^16.8.1"
   },
   "repository": {

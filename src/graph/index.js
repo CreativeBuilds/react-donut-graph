@@ -1,17 +1,18 @@
 import React from 'react';
 import './index.css';
+import PropTypes from 'prop-types';
 import { reverse } from 'lodash';
 
 const DonutChart = React.createClass({
   propTypes: {
-    valuelabel: React.PropTypes.string, // label for the chart
-    size: React.PropTypes.number, // diameter of chart
-    data: React.PropTypes.array, // array of data
-    text: React.PropTypes.string, // Text inside the chart
-    strokewidth: React.PropTypes.number, // width of chart line
-    donutchartTextValStyle: React.PropTypes.object,
-    donutchartTextLabelStyle: React.PropTypes.object,
-    donutchartTextStyle: React.PropTypes.object
+    valuelabel: PropTypes.string, // label for the chart
+    size: PropTypes.number, // diameter of chart
+    data: PropTypes.array, // array of data
+    text: PropTypes.string, // Text inside the chart
+    strokewidth: PropTypes.number, // width of chart line
+    donutchartTextValStyle: PropTypes.object,
+    donutchartTextLabelStyle: PropTypes.object,
+    donutchartTextStyle: PropTypes.object
   },
   getDefaultProps() {
     return {
