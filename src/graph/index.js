@@ -9,6 +9,7 @@ const DonutChart = React.createClass({
     valuelabel: React.PropTypes.string, // label for the chart
     size: React.PropTypes.number, // diameter of chart
     data: React.PropTypes.array, // array of data
+    text: React.PropTypes.string, // Text inside the chart
     strokewidth: React.PropTypes.number, // width of chart line
     donutchartTextValStyle: React.PropTypes.object,
     donutchartTextLabelStyle: React.PropTypes.object,
@@ -99,7 +100,7 @@ const DonutChart = React.createClass({
             className='donutchart-text-val '
             style={this.props.donutchartTextValStyle || {}}
           >
-            {this.props.tickets}/100
+            {this.props.text}
           </tspan>
           <tspan
             className='donutchart-text-label'
