@@ -14,14 +14,6 @@ class DonutChart extends React.Component {
     donutchartTextLabelStyle: PropTypes.object,
     donutchartTextStyle: PropTypes.object
   };
-  getDefaultProps = () => {
-    return {
-      data: [],
-      valuelabel: 'ValueLabel',
-      size: 150,
-      strokewidth: 20
-    };
-  };
   render() {
     let size = this.props.size;
     const offset = 0 * (365 / 100);
@@ -114,4 +106,12 @@ class DonutChart extends React.Component {
     );
   }
 }
+
+DonutChart.defaultProps = {
+  data: [],
+  valuelabel: 'ValueLabel',
+  size: 150,
+  strokewidth: 20
+};
+
 export default DonutChart;

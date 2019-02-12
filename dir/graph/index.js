@@ -8,13 +8,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -29,34 +29,15 @@ function (_React$Component) {
   _inherits(DonutChart, _React$Component);
 
   function DonutChart() {
-    var _getPrototypeOf2;
-
-    var _this;
-
     _classCallCheck(this, DonutChart);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DonutChart)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getDefaultProps", function () {
-      return {
-        data: [],
-        valuelabel: 'ValueLabel',
-        size: 150,
-        strokewidth: 20
-      };
-    });
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(DonutChart).apply(this, arguments));
   }
 
   _createClass(DonutChart, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       var size = this.props.size;
       var offset = 0 * (365 / 100);
@@ -89,17 +70,17 @@ function (_React$Component) {
       }), reverse(data || []).map(function (obj, index) {
         var size2 = size;
         var halfsize = size2 * 0.5;
-        var radius = halfsize - _this2.props.strokewidth * 0.5;
+        var radius = halfsize - _this.props.strokewidth * 0.5;
         obj.value = parseFloat(obj.value);
         obj.offset = parseFloat(obj.offset || 0);
         var offset = 0;
         var strokeval = (obj.value + obj.offset) * circumference / 100;
         var dashval = strokeval + ' ' + circumference;
         var indicatorstyle = {
-          strokeWidth: _this2.props.strokewidth,
+          strokeWidth: _this.props.strokewidth,
           strokeDasharray: dashval
         };
-        obj.stroke ? indicatorstyle.stroke = obj.stroke : _this2.props.stroke ? indicatorstyle.stroke = _this2.props.stroke : null;
+        obj.stroke ? indicatorstyle.stroke = obj.stroke : _this.props.stroke ? indicatorstyle.stroke = _this.props.stroke : null;
         var rotateval = "rotate(".concat(-90 + offset, " ") + halfsize + ',' + halfsize + ')';
         return React.createElement("circle", {
           key: index,
@@ -148,4 +129,10 @@ _defineProperty(DonutChart, "propTypes", {
   donutchartTextStyle: PropTypes.object
 });
 
+DonutChart.defaultProps = {
+  data: [],
+  valuelabel: 'ValueLabel',
+  size: 150,
+  strokewidth: 20
+};
 export default DonutChart;
