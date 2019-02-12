@@ -2,5 +2,6 @@
   "presets": [
     ["@babel/preset-env", { "modules": false }], // webpack understands the native import syntax, and uses it for tree shaking
     "@babel/preset-react" // Transpile React components to JavaScript
-  ]
+  ],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
 }

@@ -3,8 +3,8 @@ import './index.css';
 import PropTypes from 'prop-types';
 import { reverse } from 'lodash';
 
-const DonutChart = React.createClass({
-  propTypes: {
+class DonutChart extends React.Component {
+  static propTypes = {
     valuelabel: PropTypes.string, // label for the chart
     size: PropTypes.number, // diameter of chart
     data: PropTypes.array, // array of data
@@ -13,15 +13,15 @@ const DonutChart = React.createClass({
     donutchartTextValStyle: PropTypes.object,
     donutchartTextLabelStyle: PropTypes.object,
     donutchartTextStyle: PropTypes.object
-  },
-  getDefaultProps() {
+  };
+  getDefaultProps = () => {
     return {
       data: [],
       valuelabel: 'ValueLabel',
       size: 150,
       strokewidth: 20
     };
-  },
+  };
   render() {
     let size = this.props.size;
     const offset = 0 * (365 / 100);
@@ -113,5 +113,5 @@ const DonutChart = React.createClass({
       </svg>
     );
   }
-});
+}
 export default DonutChart;
